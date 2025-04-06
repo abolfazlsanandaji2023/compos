@@ -1,9 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { HomeComponent } from './home/home.component';
+import { ElementsModule } from './elements/elements.module';
 
 const routes: Routes = [
-  // {path:'',component:AppComponent}
+  {path:'elements',loadChildren:()=>import('./elements/elements.module').then(n=>n.ElementsModule)},
+  {path:'collections',loadChildren:()=>import('./collections/collections.module').then(n=>n.CollectionsModule)},
+
+  {path:'',redirectTo:'/home',pathMatch:'full'},
+    {path:'home',component:HomeComponent},
+   {path:'notfound',component:NotFoundComponent},
+   {path:'**',redirectTo:'/notfound'}
   ];
 
 @NgModule({

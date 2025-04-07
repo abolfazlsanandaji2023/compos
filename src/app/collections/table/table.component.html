@@ -1,0 +1,21 @@
+<table class="ui  table" [ngClass]="className">
+    <thead>
+      <tr >
+        <ng-container *ngFor="let head of header">
+            <th *ngIf="head.show">{{head.value}}</th>
+        </ng-container>
+        
+        <th *ngIf="!header.length">No headers available</th>
+       
+      </tr></thead>
+    <tbody>
+      <!-- <tr *ngFor="let person of data"> -->
+       
+       
+        <tr *ngFor="let item of data">
+            <ng-container *ngFor="let head of header">
+                <td *ngIf="head.show" data-label="Name">{{item[head.key]}}</td>
+            </ng-container>
+        </tr>
+    </tbody>
+  </table>

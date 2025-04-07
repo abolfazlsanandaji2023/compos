@@ -1,3 +1,17 @@
 <app-divider>Table Component</app-divider>
 <app-table [data]="data" [header]="header" [className]="'celled'">
 </app-table>
+<app-divider>Tabs</app-divider>
+<app-tabs>
+  <a routerLink="../collections" [routerLinkActiveOptions]="{exact:true}"  routerLinkActive="active"  class=" item" [ngClass]="bioActive">
+    Bio
+  </a>
+  <a routerLink="companies"  routerLinkActive="active"  class="item" [ngClass]="compActive">
+    Companies
+  </a>
+  <a routerLink="partners"  routerLinkActive="active"  class="item" [ngClass]="partnActive">
+    Partners
+  </a>
+</app-tabs>
+
+

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-collection-home',
@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
   styleUrl: './collection-home.component.css'
 })
 export class CollectionHomeComponent {
+   partnActive='';
+  compActive='';
+  bioActive='active';
 data=[
   {name:'reza',age:27 ,job:'ui',employed:false},
   {name:'ali',age:28 ,job:'billboard',employed:true},
@@ -17,4 +20,22 @@ header=[
   {key:'job',value:'Job',show:true},
   {key:'employed',value:'Employed',show:false},
 ]
+bioClick(){
+  
+  this.bioActive = 'active';
+  this.compActive = '';
+  this.partnActive = '';
+}
+
+compClick(){
+  this.bioActive = '';
+  this.compActive = 'active';
+  this.partnActive = '';
+}
+
+partnClick(){
+  this.bioActive = '';
+  this.compActive = '';
+  this.partnActive = 'active';
+}
 }

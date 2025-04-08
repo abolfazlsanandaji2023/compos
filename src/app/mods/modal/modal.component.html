@@ -1,1 +1,14 @@
-<p>modal works!</p>
+<div   (click)="closeModal()"  class="ui  dimmer  visible active" *ngIf="true">
+  <div (click)="$event.stopPropagation()" class="ui modal visible active">
+    <i class="close icon" (click)="closeModal()"></i>
+    <div class="header">Header</div>
+    <div class="content">
+      <p>This is Content</p>
+    </div>
+    <div class="actions">
+      <div  (click)="closeModal()" class="ui approve button">OK</div>
+      <!-- <div class="ui button">Neutral</div>
+      <div class="ui cancel button">Cancel</div> -->
+    </div>
+  </div>
+</div>
